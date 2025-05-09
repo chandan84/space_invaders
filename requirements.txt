@@ -1,0 +1,5 @@
+i want to author a white paper which involves developikg an application utilizing th3 following aspects, a neuro-symbolic RPC client with an LRU-embedding cache, built in WASM with compression, semantic search, and a fallback mechanism.
+
+give me detailed exportable white paper which includes a snazzy title and is heavily illustrated with flow amd mermaid diagrams. i want thr paper to be ready to an extent that i can simply pick it up and publish without having to do numerous corrections. 
+
+at the end of it once the article is written assess it using openai's best model todate. and give it a score pretending as if the white paper was a final submission for a thesis
