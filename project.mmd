@@ -1,0 +1,277 @@
+flowchart TD
+    %% Main Components with Semantic Velocity Framework
+    UI[Claims Processor UI\nHTML/TypeScript/Tailwind CSS]
+    
+    %% WebAssembly Integration Layer
+    subgraph WASM["WebAssembly Integration Layer"]
+        WASM_BRIDGE[JavaScript/TypeScript Bridge]
+        RUST_CORE[Rust Core Modules]
+        WASM_RESOURCE[Resource Management]
+        WASM_FALLBACK[Fallback Mechanisms]
+    end
+    
+    %% Semantic Caching System
+    subgraph SCS["Semantic Caching System"]
+        REQ_PROC[Request Processor]
+        VECTOR_STORE[Vector Store\nHNSW Graph]
+        SIM_ENGINE[Similarity Engine\n90% Threshold]
+        CACHE_MGR[Cache Manager\n6hr Expiration]
+        DIST_COORD[Distributed Coordination]
+    end
+    
+    %% Vector Embedding
+    subgraph VE["Vector Embedding"]
+        EM_MODELS[Embedding Models\nAzure Cloud]
+        TRANSFORMER[Transformer-Based\nEncoders]
+        STRUCT_ENC[Structured Data\nEncoders]
+        HYBRID_ENC[Hybrid Approaches]
+    end
+    
+    %% Cache Storage
+    subgraph CS["Cache Storage"]
+        SEMANTIC_CACHE[(Semantic Vector Cache\nRedis/Vector DB)]
+        EXACT_CACHE[(Exact Match Cache\nRedis)]
+        MEM_TIER[Memory-First Tier]
+        DISK_TIER[Persistent Storage Tier]
+    end
+    
+    %% HTTP3 Communication Layer
+    subgraph HTTP3["HTTP3 Communication Layer"]
+        HTTP3_CLIENT[HTTP3 Client]
+        QUIC[QUIC Protocol]
+        STREAM_MUX[Stream Multiplexing]
+        CONN_MIGR[Connection Migration]
+    end
+    
+    %% Backend Services
+    subgraph BS["Backend Services"]
+        API_GW[API Gateway\nHTTP3]
+        
+        subgraph MS["Member Services"]
+            MS_API[Member Service API\nGolang/HTTP3]
+            MS_DB[(Member Database)]
+        end
+        
+        subgraph PS["Policy Services"]
+            PS_API[Policy Service API\nGolang/HTTP3]
+            PS_DB[(Policy Database)]
+        end
+        
+        subgraph BNS["Benefits Services"]
+            BS_API[Benefits Service API\nC#/Semantic Kernel]
+            BS_DB[(Benefits Database)]
+        end
+        
+        subgraph PVS["Provider Services"]
+            PV_API[Provider Service API\nGolang/HTTP3]
+            PV_DB[(Provider Database)]
+        end
+        
+        subgraph FSS["Fee Schedule Services"]
+            FS_API[Fee Schedule API\nRust/HTTP3]
+            FS_DB[(Fee Schedule Database)]
+        end
+        
+        subgraph CPE["Claims Processing Engine"]
+            CP_API[Claims Processing API\nC#/Semantic Kernel]
+            CP_RULES[Rules Engine]
+            CP_DB[(Claims Database)]
+        end
+    end
+    
+    %% Telemetry and Exception Handling
+    subgraph TS["Telemetry System"]
+        METRICS[Metrics Collection]
+        TRACING[Distributed Tracing]
+        LOGGING[Structured Logging]
+        ALERTS[Alerting System]
+    end
+    
+    subgraph EH["Exception Handling"]
+        CIRCUIT[Circuit Breaker]
+        RETRY[Retry Mechanism]
+        FALLBACK[Fallback Responses]
+        DEGRADED[Degraded Mode]
+    end
+    
+    %% Semantic Query Flow
+    subgraph SQF["Semantic Query Flow"]
+        UNSTRUCTURED[Unstructured User Query]
+        VECTOR_GEN[Vector Generation]
+        VECTOR_COMPARE[Vector Comparison]
+        SEM_HIT[Semantic Cache Hit]
+        SEM_MISS[Semantic Cache Miss]
+        STORE_VECTOR[Store Query Vector + Response]
+    end
+    
+    %% Exact Match Flow
+    subgraph EMF["Exact Match Flow"]
+        ID_LOOKUP[ID-Based Lookup]
+        KEY_CHECK[Exact Key Check]
+        EXACT_HIT[Exact Cache Hit]
+        EXACT_MISS[Exact Cache Miss]
+        STORE_EXACT[Store Response with Exact Key]
+    end
+    
+    %% Claim Data Enrichment
+    subgraph CDE["Claim Data Enrichment"]
+        CLAIM[Claim Data]
+        ENRICH[Data Enrichment Process]
+        
+        subgraph ME["Member Enrichment"]
+            MEM_INFO[Member Information]
+            POLICY[Policy Details]
+            PLAN[Plan Enrollment]
+            SUBS[Subscribers]
+            DEP[Dependents]
+            BEN[Benefits Details]
+            CONSUMPTION[Benefit Consumption]
+            OOP[Out-of-Pocket vs Max]
+            DED[Deductible vs Max]
+        end
+        
+        subgraph PE["Provider Enrichment"]
+            PROV_INFO[Provider Information]
+            FEE[Fee Schedule]
+            CONTRACT[Contract Details]
+            PROC_CODES[Procedure Codes]
+            REV_CODES[Revenue Codes]
+        end
+    end
+    
+    %% Adjudication Process
+    subgraph AP["Adjudication Process"]
+        ADJUDICATE[Manual Adjudication]
+        DECISION[Adjudication Decision]
+        RULES_CHECK[Rules Verification]
+        FINALIZE[Finalize Claim]
+    end
+    
+    %% Main Flow Connections
+    UI --> WASM_BRIDGE
+    WASM_BRIDGE --> RUST_CORE
+    RUST_CORE --> WASM_RESOURCE
+    RUST_CORE --> WASM_FALLBACK
+    RUST_CORE --> REQ_PROC
+    RUST_CORE --> HTTP3_CLIENT
+    
+    %% HTTP3 Flow
+    HTTP3_CLIENT --> QUIC
+    QUIC --> STREAM_MUX
+    QUIC --> CONN_MIGR
+    HTTP3_CLIENT --> API_GW
+    
+    %% Backend Connections
+    API_GW --> MS_API
+    API_GW --> PS_API
+    API_GW --> BS_API
+    API_GW --> PV_API
+    API_GW --> FS_API
+    API_GW --> CP_API
+    MS_API --> MS_DB
+    PS_API --> PS_DB
+    BS_API --> BS_DB
+    PV_API --> PV_DB
+    FS_API --> FS_DB
+    CP_API --> CP_DB
+    CP_API --> CP_RULES
+    
+    %% Semantic Caching Flow
+    UI --> UNSTRUCTURED
+    UNSTRUCTURED --> WASM_BRIDGE
+    REQ_PROC --> VECTOR_GEN
+    VECTOR_GEN --> EM_MODELS
+    EM_MODELS --> TRANSFORMER
+    EM_MODELS --> STRUCT_ENC
+    EM_MODELS --> HYBRID_ENC
+    EM_MODELS --> VECTOR_COMPARE
+    VECTOR_COMPARE --> VECTOR_STORE
+    VECTOR_STORE --> SIM_ENGINE
+    SIM_ENGINE --> SEM_HIT
+    SIM_ENGINE --> SEM_MISS
+    SEM_HIT --> SEMANTIC_CACHE
+    SEMANTIC_CACHE --> MEM_TIER
+    SEMANTIC_CACHE --> DISK_TIER
+    SEM_HIT --> UI
+    SEM_MISS --> HTTP3_CLIENT
+    HTTP3_CLIENT --> STORE_VECTOR
+    STORE_VECTOR --> CACHE_MGR
+    STORE_VECTOR --> DIST_COORD
+    STORE_VECTOR --> SEMANTIC_CACHE
+    STORE_VECTOR --> UI
+    
+    %% Exact Match Caching Flow
+    UI --> ID_LOOKUP
+    ID_LOOKUP --> WASM_BRIDGE
+    RUST_CORE --> KEY_CHECK
+    KEY_CHECK --> EXACT_CACHE
+    KEY_CHECK --> EXACT_HIT
+    KEY_CHECK --> EXACT_MISS
+    EXACT_HIT --> UI
+    EXACT_MISS --> HTTP3_CLIENT
+    HTTP3_CLIENT --> STORE_EXACT
+    STORE_EXACT --> CACHE_MGR
+    STORE_EXACT --> EXACT_CACHE
+    STORE_EXACT --> UI
+    
+    %% Claims Processing Flow
+    UI --> CLAIM
+    CLAIM --> ENRICH
+    ENRICH --> MEM_INFO
+    MEM_INFO --> POLICY
+    MEM_INFO --> PLAN
+    MEM_INFO --> SUBS
+    MEM_INFO --> DEP
+    MEM_INFO --> BEN
+    MEM_INFO --> CONSUMPTION
+    CONSUMPTION --> OOP
+    CONSUMPTION --> DED
+    
+    ENRICH --> PROV_INFO
+    PROV_INFO --> FEE
+    PROV_INFO --> CONTRACT
+    PROV_INFO --> PROC_CODES
+    PROV_INFO --> REV_CODES
+    
+    ENRICH --> ID_LOOKUP
+    ENRICH --> UNSTRUCTURED
+    
+    UI --> ADJUDICATE
+    ADJUDICATE --> RULES_CHECK
+    RULES_CHECK --> CP_RULES
+    RULES_CHECK --> DECISION
+    DECISION --> FINALIZE
+    FINALIZE --> CP_API
+    
+    %% Telemetry and Exception Handling
+    RUST_CORE --> METRICS
+    RUST_CORE --> TRACING
+    RUST_CORE --> LOGGING
+    RUST_CORE --> CIRCUIT
+    CIRCUIT --> RETRY
+    CIRCUIT --> FALLBACK
+    FALLBACK --> DEGRADED
+    
+    %% Style Definitions
+    classDef frontend fill:#f9f,stroke:#333,stroke-width:4px
+    classDef wasm fill:#fcf,stroke:#333,stroke-width:4px
+    classDef cache fill:#cff,stroke:#333,stroke-width:4px
+    classDef vector fill:#9ef,stroke:#333,stroke-width:4px
+    classDef backend fill:#cfc,stroke:#333,stroke-width:4px
+    classDef database fill:#ffc,stroke:#333,stroke-width:4px
+    classDef http3 fill:#fdc,stroke:#333,stroke-width:4px
+    classDef telemetry fill:#ddf,stroke:#333,stroke-width:4px
+    classDef exception fill:#fdd,stroke:#333,stroke-width:4px
+    classDef flow fill:#fff,stroke:#333,stroke-width:2px
+    
+    %% Apply Styles
+    class UI frontend
+    class WASM_BRIDGE,RUST_CORE,WASM_RESOURCE,WASM_FALLBACK wasm
+    class SEMANTIC_CACHE,EXACT_CACHE,MEM_TIER,DISK_TIER cache
+    class REQ_PROC,VECTOR_STORE,SIM_ENGINE,CACHE_MGR,DIST_COORD,EM_MODELS,TRANSFORMER,STRUCT_ENC,HYBRID_ENC vector
+    class API_GW,MS_API,PS_API,BS_API,PV_API,FS_API,CP_API,CP_RULES backend
+    class MS_DB,PS_DB,BS_DB,PV_DB,FS_DB,CP_DB database
+    class HTTP3_CLIENT,QUIC,STREAM_MUX,CONN_MIGR http3
+    class METRICS,TRACING,LOGGING,ALERTS telemetry
+    class CIRCUIT,RETRY,FALLBACK,DEGRADED exception
+    class UNSTRUCTURED,VECTOR_GEN,VECTOR_COMPARE,SEM_HIT,SEM_MISS,STORE_VECTOR,ID_LOOKUP,KEY_CHECK,EXACT_HIT,EXACT_MISS,STORE_EXACT flow
