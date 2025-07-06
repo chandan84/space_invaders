@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Automation: A Comparative Narrative</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-color: #0d1117;
+            --primary-card-bg: #161b22;
+            --secondary-card-bg: #21262d;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-red: #f85149;
+            --accent-purple: #bc8cff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .presentation-container {
+            max-width: 1600px;
+            width: 100%;
+            background: var(--primary-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: var(--border-color);
+        }
+
+        .column {
+            background-color: var(--primary-card-bg);
+            padding: 30px;
+        }
+
+        .column:first-child {
+            border-right: 1px solid var(--border-color);
+        }
+
+        .column h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 0;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .column h2 svg {
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+        
+        .disadvantages ul li::before {
+            content: '✗';
+            color: var(--accent-red);
+        }
+
+        .section ul li strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .example-box {
+            background-color: var(--secondary-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .example-box h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .example-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .example-box code {
+            display: block;
+            background-color: var(--bg-color);
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: var(--accent-purple);
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        <header>
+            <h1>SOP Automation: A Comparative Architectural Approach</h1>
+            <p>Transforming a Standard Operating Procedure (SOP) knowledge graph for healthcare claims into a functional, headless automation system presents a choice between two distinct architectural philosophies.</p>
+        </header>
+
+        <div class="comparison-grid">
+            <div class="column">
+                <h2>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg>
+                    Approach A: The Crafted Rule Engine
+                </h2>
+
+                <div class="section">
+                    <h3>General Description</h3>
+                    <ul>
+                        <li>This is a traditional software development approach. A systems analyst interprets the knowledge graph and creates a detailed specification. A developer then translates this specification into a static, hard-coded workflow using conditional logic. For claims, this means turning benefit plan rules into thousands of lines of <code>if-then-else</code> statements that call specific functions.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Advantages</h3>
+                    <ul>
+                        <li><strong>Deterministic & Predictable:</strong> The logic is explicit. A claim is adjudicated with 100% predictable results, which is crucial for regulatory compliance and auditing.</li>
+                        <li><strong>High Performance:</strong> Without external API calls for reasoning, claim processing is extremely fast, ideal for high-volume batches.</li>
+                        <li><strong>Lower Runtime Costs:</strong> There are no per-claim costs from LLM APIs. The costs are fixed, related to hosting and infrastructure.</li>
+                    </ul>
+                </div>
+
+                <div class="section disadvantages">
+                    <h3>Disadvantages</h3>
+                    <ul>
+                        <li><strong>Extremely Rigid:</strong> The system cannot handle any rule variation not explicitly coded. A new benefit plan or a change in state regulations requires a full development cycle.</li>
+                        <li><strong>High Maintenance Overhead:</strong> The code becomes a complex monolith. A change to one rule can have unintended consequences for others, making updates risky and slow.</li>
+                        <li><strong>Slow to Market:</strong> Launching new health plans or adapting to market changes is severely hampered by the need for lengthy development cycles for the adjudication logic.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Use Case: Adjudicating an Out-of-Network (OON) Claim</h3>
+                    <div class="example-box">
+                        <h4>Scenario: A health plan's OON deductible changes.</h4>
+                        <p>A developer must find the specific hard-coded value in the application logic and modify it. This is prone to error and affects every plan using that logic.</p>
+                        <code>// Developer must find and change this line
+if (claim.isOON) {
+  remainingDeductible = applyDeductible(claim, 5000); // Hard-coded value
+}</code>
+                    </div>
+                     <div class="example-box">
+                        <h4>Scenario: A large provider group, "North Atlantic Medical Associates," negotiates a special rule to cover their OON emergency visits at 100%, bypassing the standard 70% coverage.</h4>
+                        <p>A developer must add another special case to the already complex logic. This increases code debt and makes future changes even harder.</p>
+                        <code>// Code becomes more nested and complex
+if (claim.isOON) {
+  if (claim.providerGroup === 'North Atlantic Medical Associates' && claim.isEmergency) {
+    payout = calculatePayment(claim.amount, 1.0); // New special case
+  } else {
+    payout = calculatePayment(claim.amount, 0.70); // Standard OON logic
+  }
+}</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    Approach B: The Intelligent Agentic System
+                </h2>
+                <div class="section">
+                    <h3>General Description</h3>
+                    <ul>
+                        <li>The complete adjudication SOP is modeled as a stateful process flow in the graph database. The AI Agent acts as an <strong>intelligent navigator</strong> of this graph. For each claim, it starts at the `Intake` node and traverses a path based on the claim's data. At each decision point (e.g., `Is_Provider_OON?`), the LLM determines the correct path to take. At each processing node (e.g., `Apply_Deductible`), the agent invokes the corresponding predefined function from an MCP server library to execute the step.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Advantages</h3>
+                    <ul>
+                        <li><strong>Flexible & Adaptive:</strong> Benefit rules are data, not code. A new plan is launched by adding its rule-path to the graph. Changes are reflected instantly without code deployment.</li>
+                        <li><strong>Scalable & Transparent:</strong> The system easily handles complexity. Hundreds of plan variations can be added as new paths in the graph. The traversal path for each claim is inherently auditable.</li>
+                        <li><strong>Future-Proof & Intelligent:</strong> The architecture is modular. The agent can be upgraded with more powerful LLMs to handle more complex traversal decisions, while the MCP tools remain independent.</li>
+                    </ul>
+                </div>
+
+                <div class="section disadvantages">
+                    <h3>Disadvantages</h3>
+                    <ul>
+                        <li><strong>Non-Deterministic Traversal:</strong> The LLM's path selection could be inconsistent. Requires robust validation, logging, and a "human-in-the-loop" escalation path for claims where the agent is uncertain of the next step.</li>
+                        <li><strong>Performance Latency & Cost:</strong> Each decision point may involve an LLM call, adding time and cost to adjudication. This is a trade-off for extreme flexibility.</li>
+                        <li><strong>Complex Initial Setup:</strong> Requires a specialized team to design the graph schema, build the agent, and manage the microservice (MCP) infrastructure.</li>
+                    </ul>
+                </div>
+                
+                 <div class="section">
+                    <h3>Use Case: Adjudicating an Out-of-Network (OON) Claim</h3>
+                    <div class="example-box">
+                        <h4>Scenario: A health plan's OON deductible changes.</h4>
+                        <p>A business analyst updates a property on the `Apply_OON_Deductible` node in the graph. When the agent traverses to this node, the associated MCP function reads the updated property. The logic is unchanged.</p>
+                        <code>// Analyst runs a simple Cypher query in Neo4j
+MATCH (s:Step {name: 'Apply_OON_Deductible'})
+SET s.deductibleAmount = 4500</code>
+                    </div>
+                     <div class="example-box">
+                        <h4>Scenario: "North Atlantic Medical Associates" negotiates a special rule to cover their OON emergency visits at 100%.</h4>
+                        <p>A business analyst modifies the graph to insert a new conditional path. The `Is_Provider_OON` node now has a new edge for this provider that leads to a specific `Apply_Special_Coverage` node. The agent will automatically follow this new path for relevant claims.</p>
+                        <code>// Analyst models the new rule as a new path in the SOP
+MATCH (d:Step {name:'Check_OON_Status'}), (t:Step {name:'Apply_Full_Coverage'})
+CREATE (d)-[:HAS_EXCEPTION {
+  provider: 'North Atlantic Medical Associates',
+  claimType: 'Emergency'
+}]->(t)</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
