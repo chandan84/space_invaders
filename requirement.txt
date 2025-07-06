@@ -1,0 +1,7 @@
+I have a knowledge graph built on a SOP document. Each actual work on processing that happens at each node of the knowledge graph can be substituted with an function, all functions can be registered to a function library. There are 2 approaches I can take to implement the knowledge graph into a headless automation.
+Option A. I can rope in a team consisting of a systems analyst a developer who can manual eye ball the knowledge graph , create a if-then-else implementation and use the functions from the functions library to implement the end to end process.
+
+Option B. I can implement a processing agent using a AI agentic framework like langgraph or semantic kernel, that can be fed the entire knowledge graph stored in a graph DB, like neo4j. the framework be provided intelligence via multiple LLMs like gpt4.1 or o3 and the functions in functions library can be converted into MCP servers and plugged into the AI agent to be available to the LLMs. AI agent in this case is expected to use intelligence as resources implementing the solution in Option A, using LLMs and MCP servers and perform the headless end to end processing.
+
+Convert the above description into a comparative narrative between both approaches.
+create a ppt on it. the slide should contain a table with 1 row 2 columns, each column should represent an approach. in each cell the data should be bulleted and should include a general description, advantages, disadvantages and likely effort a medium sized Knowledge graph.
