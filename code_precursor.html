@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From SOP to Knowledge Graph: The Genesis of Automation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-color: #0d1117;
+            --primary-card-bg: #161b22;
+            --secondary-card-bg: #21262d;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-red: #f85149;
+            --accent-purple: #bc8cff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .presentation-container {
+            max-width: 1400px;
+            width: 100%;
+            background: var(--primary-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .flow-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flow-step svg {
+            margin-bottom: 15px;
+        }
+
+        .flow-step h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .flow-arrow {
+            font-size: 3rem;
+            color: var(--border-color);
+            flex-shrink: 0;
+            margin: 0 20px;
+        }
+
+        .step-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .detail-box {
+            background-color: var(--secondary-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+        }
+        
+        .detail-box h4 {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-box h4 svg {
+            margin-right: 10px;
+        }
+
+        .detail-box p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .code-box {
+            background-color: #0d1117;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #c9d1d9;
+        }
+        
+        .code-box strong {
+            color: var(--accent-green);
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: var(--secondary-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        
+        .footer-note h3 {
+            color: var(--accent-purple);
+            margin-top: 0;
+        }
+        
+        .footer-note p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        <header>
+            <h1>From SOP to Knowledge Graph: The Genesis of Automation</h1>
+            <p>Before any automation can occur, we must first translate human knowledge into a machine-executable format. This page outlines the innovative process of using a Large Language Model (LLM) to convert a business-authored Standard Operating Procedure (SOP) into a structured, queryable Knowledge Graph.</p>
+        </header>
+
+        <div class="main-content">
+            <div class="process-flow">
+                <div class="flow-step">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <h3>1. Business SOP Document</h3>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-purple);"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <h3>2. LLM Transformation</h3>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-green);"><path d="M18 5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M18 19a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M5 12a3 3 0 0 0-3-3H0v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3H3"></path><path d="M24 12a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M12 10v4"></path><path d="M12 18v4"></path><path d="M12 2v4"></path></svg>
+                    <h3>3. Live Knowledge Graph</h3>
+                </div>
+            </div>
+
+            <div class="step-details">
+                <div class="detail-box">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        The Source: A Human-Centric SOP
+                    </h4>
+                    <p>Business Product Owners write SOPs in natural language (e.g., in Confluence or Word). These documents are detailed and precise for humans but unstructured for machines. Our process begins by taking this exact text as the input.</p>
+                    <p><strong>Example SOP Snippet:</strong></p>
+                    <div class="code-box">
+                    "Upon receiving a claim, first verify member eligibility. Then, check if the provider is Out-of-Network (OON). If the provider is OON, check for special agreements. For claims from <strong>'North Atlantic Medical Associates'</strong> that are emergency services, bypass the standard OON deductible and apply 100% coverage. Otherwise, for all other OON claims, apply the standard $5000 OON deductible before calculating a 70% coinsurance payout."
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        The Transformation: LLM-Powered Structuring
+                    </h4>
+                    <p>We feed the SOP text into a Large Language Model (like GPT-4.1) with a carefully engineered prompt. The prompt instructs the LLM to act as a "Graph Architect," identifying key concepts and their connections.</p>
+                     <p>The LLM performs two main tasks:</p>
+                        <ul style="color: var(--text-secondary); padding-left: 20px;">
+                            <li><strong>Entity Extraction:</strong> Identifies the "nouns" of the process, which become <strong>Nodes</strong> in the graph (e.g., steps, decisions, rules).</li>
+                            <li><strong>Relationship Extraction:</strong> Identifies the "verbs" and conditional logic, which become <strong>Relationships</strong> (edges) that connect the nodes.</li>
+                        </ul>
+                    <p>The LLM's output is not just text; it's structured code—in this case, Cypher queries ready for Neo4j.</p>
+                </div>
+            </div>
+
+            <div class="detail-box" style="grid-column: 1 / -1; margin-top: 20px;">
+                <h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M18 19a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M5 12a3 3 0 0 0-3-3H0v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3H3"></path><path d="M24 12a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2z"></path><path d="M12 10v4"></path><path d="M12 18v4"></path><path d="M12 2v4"></path></svg>
+                    The Result: The SOP as a Live Knowledge Graph
+                </h4>
+                <p>The Cypher code generated by the LLM is executed to populate a graph database like Neo4j. The abstract SOP is now a tangible, queryable, and visual "living map" of the process. Each node represents a state or action, and the relationships represent the exact flow of logic.</p>
+                <p><strong>Example Cypher Generated by the LLM:</strong></p>
+                 <div class="code-box">
+// Create nodes for each step and decision
+CREATE (s1:Step {name: 'Verify Eligibility', function: 'verifyMemberEligibility'})
+CREATE (d1:Decision {name: 'Is Provider OON?', function: 'checkProviderNetwork'})
+CREATE (d2:Decision {name: 'Check Special Agreements'})
+CREATE (s2:Step {name: 'Apply Full Coverage', function: 'applyFullCoverage'})
+CREATE (s3:Step {name: 'Apply OON Deductible', function: 'applyDeductible', amount: 5000})
+CREATE (s4:Step {name: 'Calculate Coinsurance', function: 'calculateCoinsurance', rate: 0.70})
+
+// Create relationships representing the process flow
+MERGE (s1)-[:NEXT]->(d1)
+MERGE (d1)-[:IS_TRUE]->(d2) // Path for OON claims
+MERGE (d2)-[:HAS_EXCEPTION {provider: 'North Atlantic Medical Associates', type: 'Emergency'}]->(s2)
+MERGE (d2)-[:IS_DEFAULT]->(s3) // Path for all other OON claims
+MERGE (s3)-[:NEXT]->(s4)
+                 </div>
+            </div>
+            
+            <div class="footer-note">
+                <h3>The Foundation for Automation</h3>
+                <p>This living Knowledge Graph becomes the definitive source of truth for the business process. It is this graph that will be fed into our chosen automation architecture—whether it's the Crafted Rule Engine (Approach A) or the Intelligent Agentic System (Approach B).</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
